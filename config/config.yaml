@@ -1,0 +1,32 @@
+# RAG System Configuration
+
+retrieval:
+  vector:
+    embedding_model: "openai/text-embedding-ada-002"
+    embedding_dimension: 1536
+    nlist: 100
+    m: 8
+  keyword:
+    index_type: "bm25"
+  hybrid_alpha: 0.7
+
+reformulation:
+  max_queries: 3
+  temperature: 0.7
+
+synthesis:
+  model: "gpt-4"
+  max_tokens: 1000
+  temperature: 0.3
+
+attribution:
+  min_confidence: 0.7
+  
+database:
+  host: localhost
+  port: 5432
+  database: rag_db
+  user: admin
+  password: change_me
+  min_connections: 2
+  max_connections: 10
